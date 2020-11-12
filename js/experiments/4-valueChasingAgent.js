@@ -23,7 +23,6 @@ Agent.prototype.valueChasingAgent = function (graphData) {
         miniMap = this.graph,
         masterMiniMap = this.masterMiniMap;
 
-        // LAB EXERCISE – Solution below
         effectors = this.effectors;
         stack = new Array();
         
@@ -76,7 +75,6 @@ Agent.prototype.valueChasingAgent = function (graphData) {
     else{
         this.stillRunning = false;
     }
-    // LAB EXERCISE – Solution above
 
     //Updating the mini-map
         valueInfo = sensors.neighboringValueInformation(currentNode);
