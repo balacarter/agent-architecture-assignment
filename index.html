@@ -1,0 +1,331 @@
+<!--
+ * Created by:  Eric Jaso     Date:  unknown
+ *
+ * Change History:
+ * unknown      Eric Jaso       .Initial version
+ * 6/16/2016    Gustavo Dias    .Redesign the whole webpage and implemented a sidebar menu
+ *
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>TAILS – Agent Architecture</title>
+		<link rel="stylesheet" href="css/agent.css" />
+		<link rel="stylesheet" href="css/graph.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/menu.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+	</head>
+
+	<body>
+		<!--NAVIGATION BAR LINKS START-->
+
+<div class="container">
+    <div class="sidebar">
+        <a href="http://myweb.lmu.edu/saugust/TAILSweb/html/" target="_blank"><img src="images/logo.jpg" alt="TAILS logo" width="120" /></a>
+        <ul>
+        	<li class="dropdown">
+                <input type="checkbox" />
+                <a href="#" data-toggle="dropdown">Map Legend</a>
+                <ul class="dropdown-menu">
+                    <li><img src="images/legend.jpg" alt="Map Legend" width="180" /></li>
+                </ul>
+            </li>
+            <li class="dropdown">                
+                <a href="../../../module.pdf#page=4" data-toggle="not-dropdown" target="_blank">Idea</a>
+            </li>
+            <li class="dropdown">                
+                <a href="../../../module.pdf#page=7" data-toggle="not-dropdown" target="_blank">Applications</a>
+            </li>
+            <li class="dropdown">                
+                <a href="../../../module.pdf#page=9" data-toggle="not-dropdown" target="_blank">Input-Process-Output</a>
+            </li>
+            <li class="dropdown">                
+                <a href="../../../module.pdf#page=15" data-toggle="not-dropdown" target="_blank">Design</a>
+            </li>
+            <li class="dropdown">                
+                <a href="../../../module.pdf#page=18" data-toggle="not-dropdown" target="_blank">Implementation-specific Design</a>
+            </li>
+            <li class="dropdown">                
+                <a href="../../../module.pdf#page=26" data-toggle="not-dropdown" target="_blank">Test Suite and Drivers</a>
+            </li>
+            <li class="dropdown">                
+                <a href="../../../module.pdf#page=27" data-toggle="not-dropdown" target="_blank">Experiments</a>
+            </li>
+            <li class="dropdown">
+                <input type="checkbox" />
+                <a href="#" data-toggle="dropdown">Coding Exercises</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../../../Exercises/Coding-Exercises.zip">Download</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <input type="checkbox" />
+                <a href="#" data-toggle="dropdown">Paper Exercises</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../../../Exercises/Paper-Exercises.zip">Download</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">                
+                <a href="../../../module.pdf#page=28" data-toggle="not-dropdown" target="_blank">Source Code</a>
+            </li>
+            <li class="dropdown">                
+                <a href="#" data-toggle="not-dropdown" target="_blank">References</a>
+            </li>
+            <li class="dropdown">
+                <input type="checkbox" />
+                <a href="#" data-toggle="dropdown">NSF Disclaimer and Acknowledgement</a>
+                <ul class="dropdown-menu">
+                    <li style="padding: 5px 5px 0 5px;"><img height="50px" src="http://www.nsf.gov/images/ms-icon-144x144.png" /><br /><span style="font-size: small;">This material is based upon work supported by the National Science Foundation under Course, Curriculum, and Laboratory Improvement (CCLI) Grant No. 0942454. Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+		<div id="selectors">
+				<div id="title"><b>Agent Architecture - Local Version</b></div>
+
+			<div id="searchSelection1">
+				Width:
+				<br />
+				<select name="searchSelection1" id='width'>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19" selected>19</option>
+				</select>
+			</div>
+			<br />
+
+			<div id="searchSelection2">
+				Length:
+				<br />
+				<select name="searchSelection2" id='length'>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14" selected>14</option>
+				</select>
+			</div>
+
+			<div id="startIndex">
+				<table style="width:100%;">
+					<tr>
+						<td>Number of Agents:</td>
+						<td>
+							<select name="numberOfAgents" id='quantity'>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4" selected>4</option>
+							</select>
+						</td>
+						<td style="text-align: center;">Agent Type</td>
+					</tr>
+					<tr>
+						<td>1st Start Location:</td>
+						<td><input class="textBox" name="startIndex1" id="start0" type="text" value="(0,0)"></td>
+						<td>
+							<select name="movementSelection" id='roomTraversal0'>
+								<option value="simpleAgent" selected>Simple Agent</option>
+								<option value="valueSensingAgent">Value Sensing Agent</option>
+								<option value="valueChasingAgent">Value Chasing Agent</option>
+								<option value="studentMadeMovement">Student Made Agent</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>2nd Start Location:</td>
+						<td><input class="textBox" name="startIndex2" id="start1" type="text" value="(18,0)"></td>
+						<td>
+							<select name="movementSelection" id='roomTraversal1'>
+								<option value="simpleAgent" selected>Simple Agent</option>
+								<option value="valueSensingAgent">Value Sensing Agent</option>
+								<option value="valueChasingAgent">Value Chasing Agent</option>
+								<option value="studentMadeMovement">Student Made Agent</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>3rd Start Location:</td>
+						<td><input class="textBox" name="startIndex3" id="start2" type="text" value="(0,13)"></td>
+						<td>
+							<select name="movementSelection" id='roomTraversal2'>
+								<option value="simpleAgent" selected>Simple Agent</option>
+								<option value="valueSensingAgent">Value Sensing Agent</option>
+								<option value="valueChasingAgent">Value Chasing Agent</option>
+								<option value="studentMadeMovement">Student Made Agent</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>4th Start Location:</td>
+						<td><input class="textBox" name="startIndex4" id="start3" type="text" value="(18,13)"></td>
+						<td>
+							<select name="movementSelection" id='roomTraversal3'>
+								<option value="simpleAgent" selected>Simple Agent</option>
+								<option value="valueSensingAgent">Value Sensing Agent</option>
+								<option value="valueChasingAgent">Value Chasing Agent</option>
+								<option value="studentMadeMovement">Student Made Agent</option>
+							</select>
+						</td>						
+					</tr>
+					<tr>
+						<td style="font-size: 5pt;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Number of Bugs:</td>
+						<td><input class="textBox" name="valueTiles" id="value" type="text" value=3100></td>
+
+				</table>
+			</div>
+
+			<div id="mods">
+				<table style="width:100%;">
+					<tr>
+						<td style="text-align: center;">Modifiers:</td>
+						<td style="text-align: center;" colspan="2">Modifier Percent: </td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="childrenAtPlay" id="childPlay" /> Children At Play</td>
+						<td><input class="textBox" name="modValues" id="childPlayValue" type="text" value="0"></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="murphysLaw" id="murphyLaw" /> Murphy's Law</td>
+						<td><input class="textBox" name="modValues" id="murphyLawValue" type="text" value="0"></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="childInterference" id="childInterfere" /> Child Interference&nbsp;</td>
+						<td><input class="textBox" name="modValues" id="childInterferenceValue" type="text" value="0"></td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="hyperAction" id="hyperAction" /> Hyper Action</td>
+						<td>
+							<input class="textBox" name="modValues" id="hyperAction1Value" type="text" value="0" placeholder="2x"> <-- 2x
+							<br />
+							<input class="textBox" name="modValues" id="hyperAction2Value" type="text" value="0" placeholder="3x"> <-- 3x
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="sensorFail" id="sensorSwitch" />Sensor Failure</td>
+						<td>
+							<input type="range" min="0" max="100" value="10" step="5" id="sensorFailValue" onchange="showValueFail(this.value)" />
+						</td>
+						<td>
+							<span id="sensorFailRange">10</span>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="animationDelay" id="animationDelay" />Animation Delay</td>
+						<td>
+							<input type="range" min="100" max="1000" value="100" step="100" id="animationDelayValue" onchange="showValueDelay(this.value)"/>
+						</td>
+						<td>
+							<span id="animationDelayRange">0.1s</span>
+						</td>
+					</tr>
+
+				</table>
+				<script type="text/javascript">
+					function showValueFail(newValue) {
+						document.getElementById("sensorFailRange").innerHTML = newValue;
+					}
+					function showValueDelay(newValue) {
+						document.getElementById("animationDelayRange").innerHTML = newValue/1000 + "s";
+					}
+
+				</script>
+			</div>
+
+			<div id="obstacles">
+				<input type="checkbox" name="obstacles" id="obstacle" checked/> Obstacles:
+				<br />
+				<textarea type="text" id="obstacleList">(15,12)(14,12)(13,12)(11,12)(12,12)(10,12)(9,12)(8,12)(7,12)(6,12)(5,12)(4,12)(3,12)(2,12)(1,12)(1,11)(1,10)(1,9)(1,8)(1,6)(1,7)(1,5)(1,4)(1,3)(1,2)(1,1)(3,0)(3,1)(3,2)(3,3)(3,4)(3,5)(3,6)(3,7)(3,8)(3,9)(3,10)(4,10)(6,10)(5,10)(8,10)(7,10)(9,10)(11,10)(10,10)(12,10)(13,10)(14,10)(14,8)(13,8)(12,8)(11,8)(10,8)(9,8)(8,8)(7,8)(6,8)(5,8)(5,7)(5,6)(5,5)(7,6)(9,6)(10,6)(8,6)(11,6)(12,6)(14,6)(15,6)(13,6)(14,4)(12,4)(10,4)(8,4)(7,4)(9,4)(11,4)(13,4)(4,3)(15,4)(16,4)(17,4)(16,6)(17,6)(18,6)(16,12)(17,12)(18,12)(15,8)(16,8)(17,8)(15,10)(16,10)(17,10)(17,9)(15,2)(13,1)(13,2)(11,1)(11,2)(9,1)(9,2)(7,2)(7,1)(6,4)(17,3)(17,2)(17,1)(15,0)(15,1)(13,3)(11,0)(9,3)(7,0)(5,1)(6,1)
+				 </textarea>
+			</div>
+
+			<span>
+				<button id="run">Run</button>
+			</span>
+
+			<span>
+				<a href="help.html" target="_blank" id="help"> <button id="helpbtn">?</button></a>
+			</span>
+
+		</div>
+
+		<div id="masterMap">
+			<h2>Master Map</h2>
+		</div>
+			<div id="miniMap4"></div>
+		<div id="miniMaps">
+			<h2>Agents' Maps</h2>
+		</div>
+			<div id="miniMap0"></div>
+			<div id="miniMap1"></div>
+			<div id="miniMap2"></div>
+			<div id="miniMap3"></div>
+
+		<div id="visuals">
+			<img id="sprite0" width="75px" alt="Agent sprite0" src="images/lizard2.gif"/>
+			<img id="sprite1" width="75px" alt="Agent sprite1" src="images/lizard2.gif"/>
+			<img id="sprite2" width="75px" alt="Agent sprite2" src="images/lizard2.gif"/>
+			<img id="sprite3" width="75px" alt="Agent sprite3" src="images/lizard2.gif"/>
+			<div id="map"></div>
+		</div>
+
+
+
+		<!-- Load Javascript support files. -->
+		<script src="js/other/jquery-2.2.4.min.js"></script>
+		<script src="js/other/animate.js"></script>
+		<script src="js/other/basic_search.js"></script>
+		<script src="js/other/vertex.js"></script>
+		<script src="js/other/edge.js"></script>
+		<script src="js/other/graph.js"></script>
+		<script src="js/other/agent.js"></script>
+		<script src="js/other/sensors.js"></script>
+		<script src="js/other/effectors.js"></script>
+		<script src="js/other/minigraph.js"></script>
+		<script src="js/other/search.js"></script>
+		<script src="js/other/environment.js"></script>
+		<script src="js/other/fade.js"></script>
+		<script src="js/experiments/1-lookAhead.js"></script>
+		<script src="js/experiments/2-lookAheadDirection.js"></script>
+		<script src="js/experiments/3-valueOfNeighbors.js"></script>
+		<script src="js/experiments/4-valueChasingAgent.js"></script>
+		<script src="js/experiments/5-untouchableValue.js"></script>
+		<script src="js/experiments/6-simpleAgent.js"></script>
+		<script src="js/experiments/7-studentMadeMovement.js"></script>
+		
+	</body>
+
+</html>

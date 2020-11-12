@@ -1,0 +1,279 @@
+p {
+    font-size: 11pt;
+}
+
+h2 {
+    font-size: medium;
+}
+
+body{
+    background:#FFFFFF;
+    font-family:sans-serif;
+    font-size:10pt;
+}
+
+body > div {
+    display: block;
+    text-align: center;
+    width: 700px;
+}
+
+#map {
+    position: absolute;
+    width: 790px;
+}
+
+#masterMiniMap {
+	position: absolute;
+	top: -300px;
+    left: -1200px;
+}
+
+#miniMap0 > .vertex {
+    width: 8px;
+    height: 8px;
+    opacity: 0;
+}
+
+#miniMap1 > .vertex {
+    width: 8px;
+    height: 8px;
+    opacity:0;
+}
+
+#miniMap2 > .vertex {
+    width: 8px;
+    height: 8px;
+    opacity:0;
+}
+
+#miniMap3 > .vertex {
+    width: 8px;
+    height: 8px;
+    opacity:0;
+}
+
+#miniMap4 > .vertex {
+    width: 8px;
+    height: 8px;
+    opacity:0;
+}
+
+#visuals {
+    position: absolute;
+    left: 186px;
+    top: 188px;
+    height: 658px;
+    width: 890px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    background:#D0E1DB;
+    z-index:-2;
+}
+
+#miniMaps {
+    position: absolute;
+    left: 1080px;
+    top: 188px;
+    height: 658px;
+    width: 190px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    background:#D0E1DB;
+    z-index:-2;
+}
+
+#masterMap {
+    position: absolute;
+    left: 1080px;
+    top: 4px;
+    height: 180px;
+    width: 190px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    background:#D0E1DB;
+    z-index:-2;
+}
+
+#map > span, #map > span > img, #intro > span {
+    position: absolute;
+}
+
+#sprite0 {
+    position: absolute;
+    top: 310px;
+    left: 4px;
+    z-index: 100;
+    width: 43px;
+    height: 41px;
+}
+
+#sprite1 {
+    position: absolute;
+    top: 310px;
+    left: 4px;
+    z-index: 100;
+    width: 43px;
+    height: 41px;
+}
+
+#sprite2 {
+    position: absolute;
+    top: 310px;
+    left: 4px;
+    z-index: 100;
+    width: 43px;
+    height: 41px;
+}
+
+#sprite3 {
+    position: absolute;
+    top: 310px;
+    left: 4px;
+    z-index: 100;
+    width: 43px;
+    height: 41px    ;
+}
+
+#pathText {
+    position: relative;
+    border: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    width: 90%;
+    height: 40px;
+    top: 90%;
+    left: 5%;
+}
+
+/*Green Box*/
+#selectors {
+	position: absolute;
+	background:#D0E1DB;
+	height: 180px;
+	left:186px;
+	width:890px;
+	top:4px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+.textBox {
+    width: 40px;
+}
+
+#obstacleList {
+    width: 248px;
+    height: 110px;
+}
+
+#title {
+    position: absolute;
+    height: 30px;
+    width:890px;
+    text-align: center;
+    margin-top: 2px;
+    font-size: large;
+}
+
+#run {
+	position:absolute;
+    width: 80px;
+    height: 30px;
+    left: 795px;
+    top: 145px;
+}
+
+#help {
+	position:absolute;
+    left: 859px;
+    top: 3px;
+}
+
+#helpbtn {
+    font-size: 6pt;
+    margin: 0;
+    padding: 3px;
+    width: 15px;
+    height: 15px;
+
+}
+
+/*Width*/
+#searchSelection1 {
+    text-align: left;
+    position: absolute;
+    left: 475px;
+    top: 141px;
+    font-size: 11pt;
+
+}
+/*length*/
+#searchSelection2 {
+    text-align: left;
+    position: absolute;
+	left: 540px;
+    top: 141px;
+    font-size: 11pt;
+}
+
+#startIndex {
+    text-align: left;
+    position: absolute;
+	left:280px;
+    top:31px;
+    width: 330px;
+}
+
+#startIndex > input {
+	font-size:10pt;
+	height:12px;
+}
+
+#startIndex > table, th, td {
+    border: none;
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#mods > table, th, td {
+    border: none;
+    border-spacing: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#mods {
+	text-align: left;
+    position: absolute;
+	left: 5px;
+    top:5px;
+}
+
+#animationDelayValue {
+    width:80px;
+}
+
+#sensorFailValue {
+    width:80px;
+}
+
+#dirtySpot {
+	text-align: left;
+    position: absolute;
+	left: 650px;
+    top:5px;
+}
+
+#obstacles {
+	text-align: left;
+    position: absolute;
+	left: 620px;
+    top:5px;
+	
+}
