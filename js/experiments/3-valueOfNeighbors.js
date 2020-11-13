@@ -38,6 +38,8 @@ Sensors.prototype.valueOfNeighbors = function (currentNode) {
       return (a.valueLevel) - (b.valueLevel);
     });
     resultArray[0] = true;
+
+    //The original alogrithm for getting the best neighbor
     resultArray[1] = neighborsToSort[lengthOfArray-1];
 
     //My change, sends second best nieghbor if available. 
